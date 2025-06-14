@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../common/Card";
 
-const workQueue = [
+// Данные для каждой вкладки
+const assignedData = [
   {
     initials: "SM",
     name: "Sam Masters",
@@ -58,6 +59,57 @@ const workQueue = [
   },
 ];
 
+const pendingData = [
+  {
+    initials: "JS",
+    name: "Julia Smith",
+    client: "AeroSpace Ltd",
+    clientLine: "Aviation",
+    type: "Underwriter Referral",
+    status: "Pending Review",
+    created: "04/25/2025",
+  },
+  {
+    initials: "RB",
+    name: "Robert Brown",
+    client: "Oceanic Shipping",
+    clientLine: "Marine",
+    type: "Loss Control Request",
+    status: "Pending Review",
+    created: "04/24/2025",
+  },
+  {
+    initials: "LS",
+    name: "Linda Stone",
+    client: "Green Energy",
+    clientLine: "Environmental",
+    type: "Email",
+    status: "Pending Review",
+    created: "04/23/2025",
+  },
+];
+
+const referralsData = [
+  {
+    initials: "TT",
+    name: "Tom Taylor",
+    client: "TechNova",
+    clientLine: "Cyber Liability",
+    type: "Referral",
+    status: "New",
+    created: "04/26/2025",
+  },
+  {
+    initials: "EM",
+    name: "Emily Moore",
+    client: "HealthFirst",
+    clientLine: "Medical Malpractice",
+    type: "Referral",
+    status: "Completed",
+    created: "04/27/2025",
+  },
+];
+
 const statusColors: Record<string, string> = {
   New: "bg-blue-500",
   "Pending Review": "bg-yellow-400",
@@ -70,20 +122,45 @@ const statusTextColors: Record<string, string> = {
   Completed: "text-green-400",
 };
 
+const tabs = [
+  { label: "Assigned to me", count: assignedData.length, key: "assigned" },
+  { label: "Pending Review", count: pendingData.length, key: "pending" },
+  { label: "Referrals", count: referralsData.length, key: "referrals" },
+];
+
+const menuOptions = [
+  { label: "View details" },
+  { label: "Edit" },
+  { label: "Delete" },
+];
+
 export default function WorkQueue() {
+  const [activeTab, setActiveTab] = useState("assigned");
+  const [menuIdx, setMenuIdx] = useState<number | null>(null);
+
+  let data = assignedData;
+  if (activeTab === "pending") data = pendingData;
+  if (activeTab === "referrals") data = referralsData;
+
   return (
     <Card className="bg-[#23263A] rounded-2xl border border-white/20 p-6 shadow-lg w-full max-w-[1200px]">
       <h2 className="text-[22px] font-semibold mb-4 text-white leading-tight">Work Queue</h2>
       <div className="flex gap-2 mb-4">
-        <button className="bg-blue-500 text-white px-4 py-1.5 rounded-full font-semibold shadow text-sm">
-          Assigned to me (12)
-        </button>
-        <button className="bg-[#181C2F] text-white px-4 py-1.5 rounded-full font-semibold text-sm">
-          Pending Review (8)
-        </button>
-        <button className="bg-[#181C2F] text-white px-4 py-1.5 rounded-full font-semibold text-sm">
-          Referrals (3)
-        </button>
+        {tabs.map(tab => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            className={`px-4 py-1.5 rounded-full font-semibold text-xs transition
+              ${activeTab === tab.key
+                ? "bg-blue-500 text-white shadow"
+                : "bg-[#181C2F] text-white"
+              }
+              hover:bg-[#23263A]
+            `}
+          >
+            {tab.label} ({tab.count})
+          </button>
+        ))}
       </div>
       <table className="w-full text-left">
         <thead>
@@ -97,10 +174,12 @@ export default function WorkQueue() {
           </tr>
         </thead>
         <tbody>
-          {workQueue.map((item, idx) => (
+          {data.map((item, idx) => (
             <tr
               key={idx}
-              className="border-b border-[#2E314D] last:border-none hover:bg-[#181C2F] transition"
+              className={`border-b border-[#2E314D] last:border-none transition ${
+                idx % 2 === 1 ? "bg-[#20233a]" : ""
+              }`}
             >
               <td className="py-2 px-4 flex items-center gap-3">
                 <span className="w-7 h-7 rounded-full bg-[#181C2F] flex items-center justify-center font-bold text-[12px] text-white">
@@ -122,14 +201,30 @@ export default function WorkQueue() {
                 </span>
               </td>
               <td className="py-2 px-4 text-white text-[13px]">{item.created}</td>
-              <td className="py-2 px-4">
-                <span className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-[#181C2F] cursor-pointer text-[#A0A3C2]">
+              <td className="py-2 px-4 relative">
+                <button
+                  className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-[#181C2F] cursor-pointer text-[#A0A3C2] transition"
+                  onClick={() => setMenuIdx(menuIdx === idx ? null : idx)}
+                >
                   <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
                     <circle cx="12" cy="5" r="2" fill="currentColor"/>
                     <circle cx="12" cy="12" r="2" fill="currentColor"/>
                     <circle cx="12" cy="19" r="2" fill="currentColor"/>
                   </svg>
-                </span>
+                </button>
+                {menuIdx === idx && (
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 z-10 bg-[#23263A] border border-[#2E314D] rounded-lg shadow-lg min-w-[140px] ml-2">
+                    {menuOptions.map((opt, i) => (
+                      <button
+                        key={i}
+                        className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#181C2F] transition"
+                        onClick={() => setMenuIdx(null)}
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </td>
             </tr>
           ))}

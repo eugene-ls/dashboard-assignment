@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
+import AccountNeedsAttention from "../components/Accounts/AccountNeedsAttention";
 
-const Accounts = () => {
-    return (
-        <div className="p-4">
-            <h1 className="text-2xl font-bold">Accounts</h1>
-            <p>Here you can manage your accounts.</p>
-            {/* Additional account-related components can be added here */}
-        </div>
-    );
-};
-
-export default Accounts;
+export default function Accounts() {
+  return (
+    <div className="min-h-screen px-8 py-8 bg-[#181B2A]">
+      <h2 className="text-3xl font-semibold mb-8 text-white"></h2>
+      <AccountNeedsAttention />
+    </div>
+  );
+}

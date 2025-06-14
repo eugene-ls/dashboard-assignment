@@ -8,38 +8,65 @@ export default function PortfolioGoals() {
       {/* Portfolio Loss Ratio Target */}
       <div className="mb-6">
         <div className="flex justify-between text-xs text-[#A0A3C2] mb-1">
-          <span>PORTFOLIO LOSS RATIO TARGET</span>
-          <span className="font-semibold">TG: 55%</span>
+          <span className="text-[10px] text-[#A0A3C2] mb-2 block text-center" style={{marginTop: '-10px'}}>
+            PORTFOLIO LOSS RATIO TARGET</span>
         </div>
-        <div className="relative h-4 rounded-full bg-[#23263A] overflow-hidden mb-1">
-          <div className="absolute left-0 top-0 h-4 rounded-l-full bg-green-400" style={{ width: "48%" }}></div>
-          <div className="absolute left-[48%] top-0 h-4 bg-yellow-400" style={{ width: "24%" }}></div>
-          <div className="absolute left-[72%] top-0 h-4 rounded-r-full bg-red-500" style={{ width: "28%" }}></div>
-          <div className="absolute left-[48%] -top-2 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-b-4 border-b-[#A0A3C2]"></div>
+        {/* TG and blue arrow above bar */}
+        <div className="flex flex-col items-center mb-1" style={{ width: "100%" }}>
+          <span className="text-[10px] text-[#A0A3C2] mb-0.5">TG:55%</span>
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M8 10L0 0H16L8 10Z" fill="#38BDF8"/>
+          </svg>
+        </div>
+        {/* Progress bar */}
+        <div className="relative h-4 rounded-full bg-[#23263A] overflow-hidden mb-1 flex items-center">
+          <div className="h-4 rounded-l-full bg-green-400 flex items-center justify-center" style={{ width: "48%" }}>
+            <span className="text-xs font-semibold text-white ml-2">48.2%</span>
+          </div>
+          <div className="h-4 bg-yellow-400" style={{ width: "24%" }}></div>
+          <div className="h-4 rounded-r-full bg-red-500" style={{ width: "28%" }}></div>
+        </div>
+        {/* Green arrow under indicator */}
+        <div className="flex" style={{ width: "95%" }}>
+          <svg className="mx-auto" width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M8 0L0 10H16L8 0Z" fill="#22C55E"/>
+          </svg>
         </div>
         <div className="flex justify-between text-xs">
-          <span className="text-green-400 font-semibold">48.2%</span>
+          <span className="text-green-400 font-semibold"></span>
           <span className="text-[#A0A3C2]">100%</span>
         </div>
-        <div className="text-green-400 text-xs mt-1">-6.8% (GOOD)</div>
+        <div className="text-green-400 text-[10px] -mt-4 ml-16">-6.8% (GOOD)</div>
       </div>
       {/* Renewal Retention */}
       <div className="mb-6">
         <div className="flex justify-between text-xs text-[#A0A3C2] mb-1">
-          <span>RENEWAL RETENTION</span>
-          <span className="font-semibold">TG: 85-90%</span>
+          <span className="text-[10px] text-[#A0A3C2] mb-2 block text-center" style={{marginTop: '-16px'}}>
+            RENEWAL RETENTION</span>
+            <div className="w-full text-left">
+          <span className="block text-[10px] text-[#A0A3C2] text-left ml-7 mt-">TG:85-90%</span>
         </div>
-        <div className="relative h-4 rounded-full bg-[#23263A] overflow-hidden mb-1">
-          <div className="absolute left-0 top-0 h-4 rounded-l-full bg-red-500" style={{ width: "12%" }}></div>
-          <div className="absolute left-[12%] top-0 h-4 bg-yellow-400" style={{ width: "76%" }}></div>
-          <div className="absolute left-[88%] top-0 h-4 rounded-r-full bg-green-400" style={{ width: "12%" }}></div>
-          <div className="absolute left-[88%] -top-2 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-b-4 border-b-[#A0A3C2]"></div>
+        </div>
+        {/* Progress bar */}
+        <div className="relative h-4 rounded-full bg-[#23263A] overflow-hidden mb-1 flex items-center">
+          <div className="h-4 rounded-l-full bg-red-600" style={{ width: "16%" }}></div>
+          <div className="h-4 bg-yellow-300" style={{ width: "37%" }}></div>
+          <div className="h-4 bg-green-500 flex items-center justify-center" style={{ width: "14%" }}>
+            <span className="text-xs font-semibold text-white">88%</span>
+          </div>
+          <div className="h-4 rounded-r-full bg-yellow-300" style={{ width: "33%" }}></div>
+        </div>
+        {/* Green arrow under green segment */}
+        <div className="flex" style={{ width: "67%", marginLeft: "26%" }}>
+          <svg className="mx-auto" width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M8 0L0 10H16L8 0Z" fill="#22C55E"/>
+          </svg>
         </div>
         <div className="flex justify-between text-xs">
-          <span className="text-green-400 font-semibold">88%</span>
+          <span className="text-yellow-400 font-semibold">88%</span>
           <span className="text-[#A0A3C2]">100%</span>
         </div>
-        <div className="text-green-400 text-xs mt-1">ON TARGET</div>
+        <div className="text-green-400 text-[10px] text-center ml-9 -mt-2">ON TARGET</div>
       </div>
       {/* New Business Target */}
       <div className="mb-4">

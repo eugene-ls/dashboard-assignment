@@ -13,8 +13,10 @@ export default function MarketIntelligence() {
       <h2 className="text-lg font-semibold mb-4 text-white">Market intelligence</h2>
       <ul className="space-y-2">
         {news.map((item, idx) => (
-          <li key={idx} className="flex items-start gap-2">
-            <span className={`w-2 h-2 mt-1 rounded-full ${item.color}`}></span>
+          <li key={idx} className="flex items-start gap-3">
+            <span
+              className={`w-3 h-3 rounded-full border-2 border-white/80 ${item.color} flex-shrink-0 mt-0.5`}
+            ></span>
             <span className="text-white text-xs">{item.text}</span>
           </li>
         ))}
