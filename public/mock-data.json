@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "portfolioGoals": [
+        {
+          "goal": "Retirement Savings",
+          "amount": 100000,
+          "deadline": "2030-12-31"
+        },
+        {
+          "goal": "Home Purchase",
+          "amount": 50000,
+          "deadline": "2025-06-30"
+        }
+      ],
+      "accounts": [
+        {
+          "accountId": "A123",
+          "accountType": "Savings",
+          "balance": 15000
+        },
+        {
+          "accountId": "B456",
+          "accountType": "Investment",
+          "balance": 30000
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "portfolioGoals": [
+        {
+          "goal": "Education Fund",
+          "amount": 20000,
+          "deadline": "2028-09-01"
+        }
+      ],
+      "accounts": [
+        {
+          "accountId": "C789",
+          "accountType": "Checking",
+          "balance": 5000
+        }
+      ]
+    }
+  ],
+  "marketData": [
+    {
+      "ticker": "AAPL",
+      "price": 150.00,
+      "change": 1.5
+    },
+    {
+      "ticker": "GOOGL",
+      "price": 2800.00,
+      "change": -2.0
+    }
+  ],
+  "marketIntelligence": [
+    {
+      "id": 1,
+      "title": "Rate hardening in Cyber market: ~15% YoY",
+      "description": "Cyber insurance rates continue to rise year over year."
+    },
+    {
+      "id": 2,
+      "title": "New capacity entering Marine market",
+      "description": "Several new players are entering the marine insurance sector."
+    },
+      {
+      "id": 3,
+      "title": "Environmental regulatory changes in CA",
+      "description": "California introduces new environmental insurance regulations."
+    }
+  ],
+  "workQueue": [
+    {
+      "originator": "John Doe",
+      "clientline": "Personal Finance",
+      "type": "Portfolio Review",
+      "status": "Pending",
+      "created": "04/16/2025"
+    }
+  ],
+  "organizations": [
+  { "id": 1, "name": "Acme Corp", "description": "Global leader in widgets." },
+  { "id": 2, "name": "Beta LLC", "description": "Innovative tech solutions." }
+]
+}
