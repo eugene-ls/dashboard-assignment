@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Layout from "../components/lAyout";
 
 // SVG иконки для навигации
 const icons = {

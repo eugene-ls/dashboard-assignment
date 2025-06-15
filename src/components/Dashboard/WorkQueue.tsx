@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Card from "../common/Card";
+
 
 // Данные для каждой вкладки
 const assignedData = [
@@ -175,11 +177,14 @@ export default function WorkQueue() {
         </thead>
         <tbody>
           {data.map((item, idx) => (
-            <tr
+            <motion.tr
               key={idx}
               className={`border-b border-[#2E314D] last:border-none transition ${
                 idx % 2 === 1 ? "bg-[#20233a]" : ""
               }`}
+              whileHover={{ scale: 1.015 }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+              style={{ originX: 0.5 }}
             >
               <td className="py-2 px-4 flex items-center gap-3">
                 <span className="w-7 h-7 rounded-full bg-[#181C2F] flex items-center justify-center font-bold text-[12px] text-white">
@@ -226,7 +231,7 @@ export default function WorkQueue() {
                   </div>
                 )}
               </td>
-            </tr>
+            </motion.tr>
           ))}
         </tbody>
       </table>

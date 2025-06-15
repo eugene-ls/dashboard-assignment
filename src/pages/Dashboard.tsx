@@ -4,6 +4,7 @@ import MyAccounts from "../components/Dashboard/MyAccounts";
 import PortfolioGoals from "../components/Dashboard/PortfolioGoals";
 import QuickActions from "../components/Dashboard/QuickActions";
 import MarketIntelligence from "../components/Dashboard/MarketIntelligence";
+import Layout from "../components/lAyout";
 
 export default function Dashboard() {
   return (
