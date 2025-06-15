@@ -12,7 +12,7 @@ export default function WinnabilityC() {
         <div className="text-[#b3b8d0] text-lg font-medium mb-2">Overall Score</div>
         <div className="flex items-center gap-4">
           <span className="text-white text-5xl font-bold">82%</span>
-          {/* Точки и подпись */}
+
           <span className="flex items-center border border-blue-400 rounded-full px-4 py-1 ml-2">
             <span className="flex gap-1 mr-2">
               <span className="inline-block w-2 h-2 bg-blue-400 rounded-full"></span>

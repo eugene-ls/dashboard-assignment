@@ -81,7 +81,6 @@ export default function PoliciesContainer() {
   return (
     <div className="w-full">
       <div className="bg-[#23263A] rounded-2xl p-6 w-full">
-        {/* Панель поиска и фильтров */}
         <div className="flex items-center gap-3 mb-6">
           <input
             type="text"
@@ -91,7 +90,6 @@ export default function PoliciesContainer() {
           <button className="border border-blue-400 text-blue-400 rounded-full px-4 py-1 text-sm hover:bg-blue-400 hover:text-white transition">Filter</button>
           <button className="border border-blue-400 text-blue-400 rounded-full px-4 py-1 text-sm hover:bg-blue-400 hover:text-white transition">Group</button>
         </div>
-        {/* Таблица */}
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
@@ -151,7 +149,7 @@ export default function PoliciesContainer() {
                   </td>
                 </tr>
               ))}
-              {/* Итоговая строка */}
+
               <tr className="border-t border-[#44485c]">
                 <td className="py-3 text-[#b3b8d0] font-semibold" colSpan={4}>TOTAL (4)</td>
                 <td className="py-3 text-[#b3b8d0] font-semibold">$992,500</td>

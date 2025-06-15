@@ -19,7 +19,7 @@ export default function IncreasingWinnability() {
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setHovered(false), 20000); // 20 секунд
+    timeoutRef.current = setTimeout(() => setHovered(false), 20000); // 20 seconds delay
   };
 
   return (

@@ -16,7 +16,7 @@ export default function ComplianceDocs() {
           <div
             key={doc}
             className="flex items-center gap-2 text-white text-base"
-            style={{ minHeight: "2rem" }} // выравнивание по высоте
+            style={{ minHeight: "2rem" }} 
           >
             <FaCheckCircle className="text-green-400" size={22} style={{ verticalAlign: "middle" }} />
             {doc}

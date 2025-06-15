@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Layout from "../components/lAyout";
 
-// SVG иконки для навигации
+// SVG 
 const icons = {
   dashboard: (
     <svg width="18" height="18" fill="none"><path d="M3 8.5V15h4v-4h4v4h4V8.5L9 3 3 8.5Z" stroke="#3B82F6" strokeWidth="1.5" strokeLinejoin="round"/></svg>
@@ -50,7 +50,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="min-h-screen bg-[#181B2A] text-white font-sans">
-      {/* Верхний бар */}
+
       <header className="flex items-center justify-between px-8 py-6">
         <h1 className="text-3xl font-normal ml-6">
           Hi Arthur, welcome! You have 12 open tasks.
@@ -65,9 +65,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
       </header>
-      {/* Линия-разделитель */}
+    
       <div className="border-b border-white/10" />
-      {/* Навигация с иконками и скроллом */}
+    
       <nav className="relative flex items-center px-8 py-4 ml-6">
         <div className="relative flex-1">
           <div
@@ -89,7 +89,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
               </Link>
             ))}
           </div>
-          {/* Scroll buttons */}
+        
           <div className="absolute right-0 top-1/2 -translate-y-1/2 flex gap-2 pr-2">
             <button
               onClick={() => scrollTabs("left")}
@@ -108,7 +108,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
       </nav>
-      {/* Контент */}
+    
       <main className="px-8 py-6">{children}</main>
     </div>
   );

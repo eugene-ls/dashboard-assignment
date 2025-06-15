@@ -97,10 +97,8 @@ function MessageCard({ msg }: { msg: Message }) {
 export default function CommunicationSection() {
   return (
     <div className="w-full">
-      {/* Надпись Communication над контейнером */}
       <div className="text-white text-2xl font-semibold mb-4">Communication</div>
       <div className="bg-[#23263A] rounded-2xl p-6 w-full">
-        {/* Панель поиска и фильтров */}
         <div className="flex items-center gap-3 mb-6">
           <input
             type="text"
@@ -110,7 +108,6 @@ export default function CommunicationSection() {
           <button className="border border-blue-400 text-blue-400 rounded-full px-4 py-1 text-sm hover:bg-blue-400 hover:text-white transition">Filter</button>
           <button className="border border-blue-400 text-blue-400 rounded-full px-4 py-1 text-sm hover:bg-blue-400 hover:text-white transition">Group</button>
         </div>
-        {/* Сообщения в две колонки */}
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex-1 flex flex-col gap-6">
             <MessageCard msg={messages[0]} />
