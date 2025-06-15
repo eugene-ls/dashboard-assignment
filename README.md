@@ -1,87 +1,152 @@
-# My Dashboard App
+# Test Assignment: Dashboard & Account UI (React)
 
-This is a React application built with Vite, utilizing Tailwind CSS for styling and React Router for navigation. The application is designed to provide a comprehensive dashboard experience for users, featuring various components and pages.
+## Goal
+A user interface for the Dashboard and Account screens was implemented based on provided screenshots. The main focus was on layout quality, component structure, state management, interactivity, code cleanliness, and responsiveness.
 
-## Technologies Used
-
-- **React** (Vite)
-- **Tailwind CSS**
-- **React Router**
-- **Mock JSON**
-- **Vercel** (for deployment)
+---
 
 ## Project Structure
 
 ```
-my-dashboard-app
-├── public
+my-dashboard-app/
+├── public/
 │   └── mock-data.json
-├── src
-│   ├── assets
-│   ├── components
-│   │   ├── Dashboard
-│   │   │   ├── WorkQueue.tsx
+├── src/
+│   ├── components/
+│   │   ├── Accounts/
+│   │   │   ├── Communication/
+│   │   │   │   ├── CommunicationSection.tsx
+│   │   │   ├── Policies/
+│   │   │   │   └── Policies.tsx
+│   │   │   ├── Winnability/
+│   │   │   │   ├── AIRecommendations.tsx
+│   │   │   │   ├── DecisionSupportPanel.tsx
+│   │   │   │   ├── DecreasingWinnability.tsx
+│   │   │   │   ├── IncreasingWinnability.tsx
+│   │   │   │   ├── WinnabilityCard.tsx
+│   │   │   │   ├── WinnabilityHeader.tsx
+│   │   │   │   ├── WinnabilityPosition.tsx
+│   │   │   │   ├── WinnabilityScore.tsx
+│   │   │   │   ├── WinnabilityTrend.tsx
+│   │   │   ├── AccountHeaderInfo.tsx
+│   │   │   ├── AccountNeedsAttention.tsx
+│   │   │   ├── AccountPerfomance.tsx
+│   │   │   ├── AccountStatus.tsx
+│   │   │   ├── AccountStatusStep.tsx
+│   │   │   ├── ComplianceDocs.tsx
+│   │   │   ├── ExposureDistribution.tsx
+│   │   │   ├── LossRatio.tsx
+│   │   │   ├── PoliciesContainer.tsx
+│   │   │   ├── PolicyCard.tsx
+│   │   │   ├── PremiumGrowth.tsx
+│   │   │   ├── WinnabilityC.tsx
+│   │   ├── common/
+│   │   │   ├── Button.tsx
+│   │   │   └── Card.tsx
+│   │   ├── Dashboard/
+│   │   │   ├── MarketIntelligence.tsx
+│   │   │   ├── MyAccounts.tsx
 │   │   │   ├── PortfolioGoals.tsx
 │   │   │   ├── QuickActions.tsx
-│   │   │   ├── MarketIntelligence.tsx
-│   │   │   └── MyAccounts.tsx
-│   │   └── common
-│   │       ├── Button.tsx
-│   │       └── Card.tsx
-│   ├── layouts
+│   │   │   └── WorkQueue.tsx
+│   │   ├── lAyout.tsx
+│   ├── layouts/
 │   │   └── MainLayout.tsx
-│   ├── pages
-│   │   ├── Dashboard.tsx
+│   ├── pages/
 │   │   ├── Accounts.tsx
+│   │   ├── Admin.tsx
 │   │   ├── Brokers.tsx
-│   │   ├── Submissions.tsx
-│   │   ├── Organizations.tsx
+│   │   ├── Dashboard.tsx
 │   │   ├── GoalsRules.tsx
-│   │   └── Admin.tsx
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── routes
+│   │   ├── Organizations.tsx
+│   │   └── Submissions.tsx
+│   ├── routes/
 │   │   └── index.tsx
-│   ├── styles
+│   ├── styles/
 │   │   └── tailwind.css
-│   └── types
-│       └── index.ts
-├── .gitignore
+│   ├── types/
+│   │   └── index.ts
+│   ├── App.tsx
+│   ├── assets/
+│   ├── index.css
+│   ├── main.tsx
 ├── index.html
 ├── package.json
 ├── postcss.config.js
 ├── tailwind.config.js
-└── tsconfig.json
+├── tsconfig.json
+├── README.md
 ```
 
-## Getting Started
+---
+
+## Implemented Features
+
+### 1. Dashboard (Main Screen)
+- Navigation bar (active tab: "Dashboard")
+- Work Queue block with tabs and table
+- Portfolio Goals block with progress indicators
+- Quick Actions block with buttons
+- Market Intelligence block with news items
+- My Accounts table with filters, triage, statuses, and color coding
+
+### 2. Account Page
+- Header with account name and general information
+- Blocks:
+  - Performance Metrics
+  - Policies
+  - Account Status & Compliance
+  - Winnability (with charts and recommendations)
+  - Communication (messages, attachments, replies)
+  - Policies Table (bottom section)
+
+---
+
+## Key Features
+- React + Vite
+- TypeScript
+- Tailwind CSS
+- Small, reusable components
+- Mock data (JSON)
+- Responsive design for desktop and tablet
+- Basic interactivity:
+  - Tab switching
+  - Highlighting active states
+  - Displaying additional information on icon click
+
+---
+
+## Technologies Used
+- React (Vite)
+- TypeScript
+- Tailwind CSS
+- Mock data (JSON)
+
+---
+
+## AI/No-code Tools Used
+- GitHub Copilot — assisted with routine tasks and component generation
+- ChatGPT — provided a step-by-step roadmap and advice on architecture and responsiveness
+- (Add any other tools if used)
+
+---
+
+## How to Run Locally
 
 1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
    ```
-   git clone <repository-url>
-   ```
-
-2. Navigate to the project directory:
-   ```
-   cd my-dashboard-app
-   ```
-
-3. Install dependencies:
-   ```
+2. Install dependencies:
+   ```bash
    npm install
    ```
-
-4. Start the development server:
-   ```
+3. Start the development server:
+   ```bash
    npm run dev
    ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-5. Open your browser and navigate to `http://localhost:3000` to view the application.
+---
 
-## Deployment
-
-This application is deployed on Vercel. You can access the live version at `<your-vercel-deployment-url>`.
-
-## Contributing
-
-Feel free to submit issues or pull requests for any improvements or bug fixes.
