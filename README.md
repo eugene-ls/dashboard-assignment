@@ -127,7 +127,7 @@ my-dashboard-app/
 ## AI/No-code Tools Used
 - GitHub Copilot — assisted with routine tasks and component generation
 - ChatGPT — provided a step-by-step roadmap and advice on architecture and responsiveness
-- (Add any other tools if used)
+
 
 ---
 
